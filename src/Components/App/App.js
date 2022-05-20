@@ -3,13 +3,13 @@ import Quizbox from "../Quizbox";
 import { useState, useEffect } from "react";
 
 function App() {
-  const [quiz, setQuiz] = useState({});
+  const [quiz, setQuiz] = useState([]);
 
   async function fetchQuiz() {
     const response = await fetch(`https://opentdb.com/api.php?amount=2`);
     const data = await response.json();
     console.log(data.results);
-    setQuiz(data);
+    setQuiz(data.results);
   }
   useEffect(() => {
     fetchQuiz();

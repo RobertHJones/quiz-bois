@@ -1,7 +1,19 @@
 .quiz {
   padding-top: 10%;
   border: solid 1px red;
-  width: 80%;
+  background-color: red;
+}
+
+.category {
+  color: white;
+  border: solid 2px white;
+  border-radius: 25px;
+}
+
+.question {
+  color: white;
+  border: solid 2px white;
+  border-radius: 25px;
 }
 
 .scrolling {
@@ -9,5 +21,8 @@
   gap: 1rem;
 }
 
-.previous {
+.answers-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }

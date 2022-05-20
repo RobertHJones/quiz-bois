@@ -6,7 +6,7 @@ function App() {
   const [quiz, setQuiz] = useState([]);
 
   async function fetchQuiz() {
-    const response = await fetch(`https://opentdb.com/api.php?amount=2`);
+    const response = await fetch(`https://opentdb.com/api.php?amount=10`);
     const data = await response.json();
     console.log(data.results);
     setQuiz(data.results);

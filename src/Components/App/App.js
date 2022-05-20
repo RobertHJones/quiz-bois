@@ -1,6 +1,6 @@
 import "./App.css";
 import Quizbox from "../Quizbox";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 
 const quizAPI = {
   key: process.env.REACT_APP_API_KEY,
@@ -9,6 +9,8 @@ const quizAPI = {
 };
 
 function App() {
+  const [quiz, setQuiz] = useState({});
+
   async function fetchQuiz() {
     const response = await fetch(`https://quizapi.io/api/v1/questions`, {
       headers: {
@@ -17,6 +19,7 @@ function App() {
     });
     const data = await response.json();
     console.log(data);
+    setQuiz(data);
   }
   useEffect(() => {
     fetchQuiz();
@@ -25,7 +28,7 @@ function App() {
   return (
     <div className="App">
       <h1>The Big Quiz</h1>
-      <Quizbox />
+      <Quizbox data={quiz} />
     </div>
   );
 }

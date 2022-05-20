@@ -1,0 +1,13 @@
+.quiz {
+  padding-top: 10%;
+  border: solid 1px red;
+  width: 80%;
+}
+
+.scrolling {
+  padding-top: 10%;
+  gap: 1rem;
+}
+
+.previous {
+}

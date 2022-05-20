@@ -2,20 +2,11 @@ import "./App.css";
 import Quizbox from "../Quizbox";
 import { useState, useEffect } from "react";
 
-const quizAPI = {
-  key: process.env.REACT_APP_API_KEY,
-  url: "https://quizapi.io/api/v1/questions1",
-  limit: 10,
-};
-
 function App() {
   const [quiz, setQuiz] = useState({});
 
   async function fetchQuiz() {
-    const response = await fetch(`https://quizapi.io/api/v1/questions`, {
-      headers: {
-        "X-Api-Key": `${quizAPI.key}`,
-      },
+    const response = await fetch(`https://opentdb.com/api.php?amount=10`, {
     });
     const data = await response.json();
     console.log(data);

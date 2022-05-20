@@ -10,15 +10,11 @@ const quizAPI = {
 
 function App() {
   async function fetchQuiz() {
-    const response = await fetch(
-      // `${quizAPI.url}/${quizAPI.key}/${quizAPI.limit}`
-      `https://quizapi.io/api/v1/questions`,
-      {
-        headers: {
-          "X-Api-Key": "SvibEz6MaaoNDKqkpmjkLWJQylK0zEsWVX05Hnqm",
-        },
-      }
-    );
+    const response = await fetch(`https://quizapi.io/api/v1/questions`, {
+      headers: {
+        "X-Api-Key": `${quizAPI.key}`,
+      },
+    });
     const data = await response.json();
     console.log(data);
   }
